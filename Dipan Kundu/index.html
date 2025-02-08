@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://5b220ab9a9276d6ea779-6538f41fac35c05fca38c7c8f0824849.ssl.cf1.rackcdn.com/fisheyeClassroom.jpg"); /* Change the URL to your background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #5073b7, #3b98b5);
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+
+        /* Slideshow */
+        .carousel img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        .events-section, .users-section {
+            background: rgba(255, 255, 255, 0.8);
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Replace with your icon image -->
+            <a class="navbar-brand" href="#">
+                <img src="https://th.bing.com/th/id/OIP.b94aox9JTCRo7t4EXrRHKgHaB9?rs=1&pid=ImgDetMain" alt="Institute Icon" style="width: 260px; height: 80px; margin-right: 10px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <!-- Optional: Icon for user profile -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+      <!-- Slideshow (Carousel) -->
+      <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.sathyabama.ac.in/sites/default/files/inline-images/DJI_0105-New-Low.jpg" class="d-block w-100" alt="Campus 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.sathyabama.ac.in/sites/default/files/styles/max_2600x2600/public/2022-09/sathyabama%20university.jpg?itok=8eiMfH0N" class="d-block w-100" alt="Campus 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://skolarrssolutions.com/wp-content/uploads/2021/02/Sathyabama1.png" class="d-block w-100" alt="Main Gate">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slideshow" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slideshow" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="container mt-5">
+        <div class="form-container">
+            <div class="form-header text-center">
+                <img src="https://th.bing.com/th/id/OIP.b94aox9JTCRo7t4EXrRHKgHaB9?rs=1&pid=ImgDetMain" width="120" alt="Logo">
+                <h1>Student Registration Form</h1>
+                <p>Fill out the form to apply for the training courses.</p>
+            </div>
+            <form id="registration-form">
+                <h2>Student Information</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select" required>
+                            <option value="" disabled selected>Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h2 class="mt-4">Address</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Street Address</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <label class="form-label">State</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Country</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+
+                <h2 class="mt-4">Courses</h2>
+                <button type="button" class="btn btn-primary" onclick="addCourse()">+ Add Course</button>
+                <table class="table table-bordered mt-3" id="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Level</th>
+                            <th>Language</th>
+                            <th>Start Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <h2 class="mt-4">Contact Information</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                </div>
+
+                <h2 class="mt-4">Calendar</h2>
+                <input type="date" class="form-control mb-3">
+
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <div class="container events-section">
+        <h3>Upcoming Events</h3>
+        <ul>
+            <li>Course Registration Deadline - 25th Feb, 2025</li>
+            <li>Introduction to Web Development Workshop - 1st March, 2025</li>
+            <li>Data Science Bootcamp - 15th March, 2025</li>
+        </ul>
+    </div>
+
+    <!-- Online Users Section -->
+    <div class="container users-section mt-4">
+        <h3>Online Users</h3>
+        <p>Currently, 15 students are online.</p>
+    </div>
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Student Portal | Contact: <a href="mailto:info@studentportal.com">info@studentportal.com</a></p>
+        <div>
+            <a href="https://twitter.com/yourusername" target="_blank" class="btn btn-outline-light btn-sm me-2">
+                <i class="bi bi-twitter"></i> Twitter
+            </a>
+            <a href="https://instagram.com/yourusername" target="_blank" class="btn btn-outline-light btn-sm me-2">
+                <i class="bi bi-instagram"></i> Instagram
+            </a>
+            <a href="https://discord.com/invite/yourdiscordlink" target="_blank" class="btn btn-outline-light btn-sm">
+                <i class="bi bi-discord"></i> Discord
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Include Bootstrap Icons for social media icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <script>
+        function addCourse() {
+            const courseOptions =  
+                `<select class="form-select">
+                    <option>Web Development</option>
+                    <option>Data Science</option>
+                    <option>Cyber Security</option>
+                    <option>AI & ML</option>
+                    <option>Cloud Computing</option>
+                    <option>Blockchain</option>
+                </select>`;
+
+            const levelOptions = 
+                `<select class="form-select">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                </select>`;
+
+            const languageOptions = 
+                `<select class="form-select">
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                    <option>German</option>
+                </select>`;
+
+            const newRow = 
+                `<tr>
+                    <td>${courseOptions}</td>
+                    <td>${levelOptions}</td>
+                    <td>${languageOptions}</td>
+                    <td><input type="date" class="form-control"></td>
+                    <td><button type="button" class="btn btn-danger btn-sm" onclick="removeCourse(this)">Remove</button></td>
+                </tr>`;
+
+            document.querySelector("#course-table tbody").insertAdjacentHTML("beforeend", newRow);
+        }
+
+        function removeCourse(button) {
+            button.closest("tr").remove();
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
