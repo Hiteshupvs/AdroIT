@@ -1,0 +1,13 @@
+@RestController
+@RequestMapping("/api/registrations")
+public class registrationcontroller {
+
+    @Autowired
+    private RegistrationRepository registrationRepository;
+    
+    @PostMapping
+    public ResponseEntity<Registration> registerStudent(@RequestBody Registration registration) {
+        Registration savedRegistration = registrationRepository.save(registration);
+        return new ResponseEntity<>(savedRegistration, HttpStatus.CREATED);
+    }
+}
