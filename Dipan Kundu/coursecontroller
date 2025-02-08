@@ -1,0 +1,13 @@
+@RestController
+@RequestMapping("/api/courses")
+public class coursecontroller {
+
+    @Autowired
+    private CourseRepository courseRepository;
+
+    @GetMapping
+    public ResponseEntity<List<Course>> getAllCourses() {
+        List<Course> courses = courseRepository.findAll();
+        return ResponseEntity.ok(courses);
+    }
+}
