@@ -13,11 +13,33 @@ $(document).ready(function () {
             url: "fetch_products.php",
             method: "POST",
             data: { search: searchQuery, category, price, size, patterns },
-            success: function (response) {
+            dataType: "json",
+            success: function (products) {
                 setTimeout(() => {
                     $("#loading-spinner").hide();
-                    $("#product-list").html(response);
+                    let productList = $("#product-list");
+                    productList.html("");
+
+                    if (products.length === 0) {
+                        productList.html("<h4>No products found.</h4>");
+                        return;
+                    }
+
+                    products.forEach(product => {
+                        productList.append(`
+                            <div class="product-card">
+                                <img src="${product.image_url}" alt="${product.name}">
+                                <h5>${product.name}</h5>
+                                <p>₹${product.price} | Size: ${product.size} | ${product.pattern}</p>
+                                <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                            </div>
+                        `);
+                    });
                 }, 1500);
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching products:", error);
+                $("#product-list").html("<h4>Error loading products.</h4>");
             }
         });
     }
