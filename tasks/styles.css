@@ -90,3 +90,18 @@ input[type="radio"], input[type="checkbox"] {
     width: 3rem;
     height: 3rem;
 }
+.add-to-cart {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+}
+
+.add-to-cart:hover {
+    background: #0056b3;
+}
